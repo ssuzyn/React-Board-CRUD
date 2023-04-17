@@ -1,38 +1,52 @@
 ul {
     list-style-type: none;
 }
+
 ul li {
-    display:inline;
+    display: inline;
     margin: 15px;
 }
+
+.table-wrapper {
+    margin: 20px;
+}
+
 table {
     font-family: Arial, Helvetica, sans-serif;
 }
-.listTable{
+
+.listTable {
     border-collapse: collapse;
 }
-.listTable tbody tr td{
+
+.listTable tbody tr td {
     border: 1px solid rgb(50, 50, 50);
     padding: 5px;
 }
+
 .listTableIndex {
     width: 100px;
 }
+
 .listTableTitle {
     width: 350px;
 }
-.th {
+
+th {
     text-align: center;
 }
+
 .noData {
     color: rgb(150, 150, 150);
     text-align: center;
 }
+
 .inputTitle {
     width: 350px;
     font-size: 16px;
     margin: 5px;
 }
+
 .inputContent {
     width: 350px;
     margin: 5px;

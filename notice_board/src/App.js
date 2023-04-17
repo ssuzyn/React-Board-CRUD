@@ -1,6 +1,6 @@
 import React from 'react';
-import {  Routes, Route } from 'react-router-dom';
- 
+import { Routes, Route } from 'react-router-dom';
+
 import BoardList from './components/BoardList';
 import BoardNew from './components/BoardNew';
 import BoardContent from './components/BoardContent';
@@ -12,8 +12,8 @@ function App() {
       <div>
         <Routes>
           <Route path='/' element={<BoardList />} />
-          <Route path='/BoardNew' element={<BoardNew/>} />
-          <Route path='/BoardContent' element={<BoardContent/>} />
+          <Route path='/BoardNew' element={<BoardNew />} />
+          <Route path='/BoardContent/:id' element={<BoardContent />} />
         </Routes>
       </div>
       <div>
