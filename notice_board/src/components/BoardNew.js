@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { dataSave } from '../modules/boardReducer';
 import { uriSave } from '../modules/uriReducer'
 import { useNavigate } from 'react-router-dom';
+import '../style.css';
 
 function BoardNew() {
     //title, content를 제어하기 위해 선언
@@ -35,16 +36,16 @@ function BoardNew() {
         setContent(e.target.value)
     }
 
-    return(
-        <div>
+    return (
+        <div className='table-wrapper'>
             <h2>글 작성</h2>
             <div>
                 <form>
                     <div>
-                        <input type='text' className='inputTitle' placeholder='제목을 입력하세요' onChange={handleTitle} value={title}/>
+                        <input type='text' className='inputTitle' placeholder='제목을 입력하세요' onChange={handleTitle} value={title} />
                     </div>
                     <div>
-                        <textarea className='inputContent' placeholder='내용을 입력하세요' onChange={handleContent} value={content}/>
+                        <textarea className='inputContent' placeholder='내용을 입력하세요' onChange={handleContent} value={content} />
                     </div>
                     <div>
                         <button type='botton' onClick={onSave}>submit</button>
@@ -54,5 +55,5 @@ function BoardNew() {
         </div>
     )
 }
- 
+
 export default BoardNew;

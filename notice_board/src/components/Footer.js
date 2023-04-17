@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
- 
+
 import ButtonHome from './ButtonHome';
 import ButtonWrite from './ButtonWrite';
- 
+import '../style.css';
+
 function Footer() {
     const uri = useSelector(state => state.uriReducer.input)
-    return(
-        <div>
+    return (
+        <div className='fotter-wrapper'>
             <hr />
             <nav>
                 <ul>
@@ -22,5 +23,5 @@ function Footer() {
         </div>
     );
 }
- 
+
 export default Footer;

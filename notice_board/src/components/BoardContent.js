@@ -48,7 +48,7 @@ function BoardContent() {
     }
 
     return (
-        <div>
+        <div className='table-wrapper'>
             <h2>상세보기</h2>
             <div>
                 <input type="text" className='inputTitle' onChange={handleTitle} value={title} />

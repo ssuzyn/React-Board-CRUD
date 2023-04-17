@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectRow } from '../modules/boardReducer';
 import { Link } from 'react-router-dom';
 import boardReducer from '../modules/boardReducer';
+import '../style.css';
 
 function BoardList() {
     // useSelector 로 boardReducer 에 있는 inputData 값을 가져온다.
@@ -29,7 +30,7 @@ function BoardList() {
                         {lastId !== 0 ?
                             input.map(rowData => (
                                 rowData.id !== '' &&
-                                <tr>
+                                <tr className='hoverRow'>
                                     <td className='listTableIndex' onClick={() => selectContent(rowData.id)}>
                                         <Link to={`BoardContent/${rowData.id}`}>{rowData.id}</Link>
                                     </td>
@@ -38,7 +39,7 @@ function BoardList() {
                                     </td>
                                 </tr>
                             )) :
-                            <tr>
+                            <tr className='hoverRow'>
                                 <td className='listTableIndex'></td>
                                 <td className='listTableTitle noData'>작성된 글이 없습니다.</td>
                             </tr>

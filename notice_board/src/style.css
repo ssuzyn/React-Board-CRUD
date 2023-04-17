@@ -5,7 +5,7 @@ ul {
 
 ul li {
     display: inline-block;
-    margin: 15px;
+    margin: 10px;
     list-style-type: none;
 }
 
@@ -68,4 +68,9 @@ th {
     margin: 5px;
     font-size: 16px;
     height: 200px;
+}
+
+.editBtn,
+.deleteBtn {
+    margin: 10px;
 }
