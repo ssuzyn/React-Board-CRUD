@@ -8,14 +8,16 @@ export const dataSave = (input) => ({
     input: {
         id: input.id,
         title: input.title,
-        content: input.content
+        content: input.content,
+        cnt: input.cnt
     }
 });
 
-export const selectRow = (id) => ({
+export const selectRow = (id, cnt) => ({
     type: SELECT,
     input: {
         id: id,
+        cnt: cnt
     }
 });
 
@@ -24,7 +26,8 @@ export const editContent = (input) => ({
     input: {
         id: input.id,
         title: input.title,
-        content: input.content
+        content: input.content,
+        cnt: input.cnt
     }
 });
 
@@ -41,7 +44,8 @@ const initialState = {
         {
             id: '',
             title: '',
-            content: ''
+            content: '',
+            cnt: 0
         }
     ],
     selectRowData: {} //select된 data를 담아주기 위해 생성
@@ -56,14 +60,31 @@ export default function boardReducer(state = initialState, action) {
                 input: state.input.concat({
                     ...action.input,
                     id: state.lastId + 1,
+                    cnt: 0
                 })
             }
         case SELECT:
             console.log(action)
+            console.log(state.input)
+            const updatedInput = state.input.map(row => {
+                if (row.id === action.input.id) {
+                    return {
+                        ...row,
+                        cnt: row.cnt + 1
+                    };
+                }
+                return row;
+            });
+            const selectedRow = updatedInput.find(row => row.id === action.input.id);
             return {
                 ...state,
-                selectRowData: state.input.find(row => row.id == action.input.id)
-            }
+                input: updatedInput,
+                selectRowData: selectedRow
+            };
+        // return {
+        //     ...state,
+        //     selectRowData: state.input.find(row => row.id == action.input.id)
+        // }
         case EDIT:
             return {
                 ...state,

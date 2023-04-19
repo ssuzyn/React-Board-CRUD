@@ -41,11 +41,15 @@ table {
 }
 
 .listTableIndex {
-    width: 30%;
+    width: 20%;
 }
 
 .listTableTitle {
-    width: 70px;
+    width: 70%;
+}
+
+.readCnt {
+    width: 10%;
 }
 
 th {

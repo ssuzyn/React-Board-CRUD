@@ -18,7 +18,8 @@ function BoardNew() {
         const input = {
             id: '',
             title: title,
-            content: content
+            content: content,
+            cnt: ''
         }
 
         dispatch(dataSave(input))

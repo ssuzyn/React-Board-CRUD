@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function BoardContent() {
     const { selectRowData } = useSelector(state => state.boardReducer);
     console.log(boardReducer);
-    console.log("selectRowData: ", selectRowData.id);
+    console.log("selectRowData: ", selectRowData);
 
     //input 값을 변경할 수 있도록 제어
     const [title, setTitle] = useState(selectRowData.title)
@@ -28,7 +28,8 @@ function BoardContent() {
         const input = {
             id: selectRowData.id,
             title: title,
-            content: content
+            content: content,
+            cnt: selectRowData.cnt
         }
         console.log('edit data ::: ', input)
         dispatch(editContent(input))
