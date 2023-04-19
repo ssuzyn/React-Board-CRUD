@@ -66,6 +66,9 @@ export default function boardReducer(state = initialState, action) {
         case SELECT:
             console.log(action)
             console.log(state.input)
+            // 리듀서 함수 내부에서 input 배열의 요소 중 하나인 cnt 값을 직접 증가시켰기 때문
+            // 따라서 해당 요소를 포함한 객체를 복사하고, 복사된 객체의 값을 변경한 후
+            // 새로운 배열로 만들어서 state를 갱신해야 함
             const updatedInput = state.input.map(row => {
                 if (row.id === action.input.id) {
                     return {
@@ -81,10 +84,6 @@ export default function boardReducer(state = initialState, action) {
                 input: updatedInput,
                 selectRowData: selectedRow
             };
-        // return {
-        //     ...state,
-        //     selectRowData: state.input.find(row => row.id == action.input.id)
-        // }
         case EDIT:
             return {
                 ...state,
